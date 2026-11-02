@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies | Unlox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="../index.html" class="logo">
+            unlox<span>.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../weather/index.html">Weather</a>
+            <a href="index.html" class="active">Movies</a>
+        </nav>
+
+        <a href="../weather/index.html" class="nav-cta">
+            Start Exploring <span>↗</span>
+        </a>
+
+    </div>
+</header>
+
+
+    <main class="movies-page">
+
+        <section class="movies-heading">
+            <p class="eyebrow">MOVIE EXPLORER</p>
+            <h1>Stories worth <span>watching.</span></h1>
+            <p>Search for movies and discover your next favourite.</p>
+        </section>
+
+        <form id="movieForm" class="movie-search">
+            <input
+                type="text"
+                id="movieInput"
+                placeholder="Search for a movie..."
+                aria-label="Search movies"
+                required
+            >
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
+        <p id="movieMessage" class="movie-message" role="status">
+            Search for a movie to explore its details.
+        </p>
+
+        <section id="movieResults" class="movie-grid"></section>
+
+    </main>
+
+    <div id="movieModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close-modal" aria-label="Close movie details">&times;</button>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="../index.html" class="logo">unlox<span>.</span></a>
+        <p>Weather and movies, thoughtfully brought together.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

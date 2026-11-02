@@ -1,0 +1,15 @@
+# Secrets
+movies/config.js
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+
+# Dependencies and build output
+node_modules/
+dist/

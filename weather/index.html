@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore live weather conditions and forecasts across Indian cities with Unlox.">
+
+    <title>India Weather | Unlox</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="../index.html" class="logo">
+            unlox<span>.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="index.html" class="active">Weather</a>
+            <a href="../movies/index.html">Movies</a>
+        </nav>
+
+        <a href="../movies/index.html" class="nav-cta">
+            Start Exploring <span>↗</span>
+        </a>
+
+    </div>
+</header>
+
+
+
+<main class="weather-page">
+
+    <!-- Heading -->
+    <section class="weather-heading">
+        <p class="eyebrow">INDIA WEATHER EXPLORER</p>
+
+        <h1>
+            Explore India's <span>sky.</span>
+        </h1>
+
+        <p>
+            Real-time weather updates and forecasts for cities
+            across India, all in one place.
+        </p>
+    </section>
+
+
+    <!-- Search -->
+    <section class="india-search">
+
+        <form class="search-form" id="weatherForm">
+
+            <input
+                type="search"
+                id="cityInput"
+                placeholder="Search an Indian city..."
+                aria-label="Search Indian city"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" class="btn btn-primary" id="searchButton">
+                Search
+            </button>
+
+        </form>
+
+        <p class="search-hint">
+            <span>✦</span> Search weather across India
+        </p>
+
+        <div class="popular-cities">
+
+            <span>POPULAR CITIES</span>
+
+            <button type="button" class="city-chip" data-city="New Delhi">Delhi</button>
+            <button type="button" class="city-chip" data-city="Mumbai">Mumbai</button>
+            <button type="button" class="city-chip" data-city="Chandigarh">Chandigarh</button>
+            <button type="button" class="city-chip" data-city="Ludhiana">Ludhiana</button>
+            <button type="button" class="city-chip" data-city="Bengaluru">Bengaluru</button>
+            <button type="button" class="city-chip" data-city="Chennai">Chennai</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Status -->
+    <p id="weatherMessage" class="weather-message" role="status" aria-live="polite">
+        Loading weather for New Delhi...
+    </p>
+
+
+    <!-- Weather Results -->
+    <section id="weatherResult" class="weather-result hidden">
+
+        <!-- Main Weather -->
+        <div class="weather-main">
+
+            <div>
+                <p class="location-label">CURRENT WEATHER IN INDIA</p>
+
+                <h2 id="cityName">New Delhi</h2>
+
+                <p id="weatherDescription">Loading conditions...</p>
+
+                <p id="weatherDate"></p>
+            </div>
+
+            <div class="temperature">
+                <span id="weatherIcon">☀</span>
+                <strong id="temperature">--°C</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Weather Details -->
+        <div class="weather-details">
+
+            <div class="detail-card">
+                <span>Feels Like</span>
+                <strong id="feelsLike">--°C</strong>
+            </div>
+
+            <div class="detail-card">
+                <span>Humidity</span>
+                <strong id="humidity">--%</strong>
+            </div>
+
+            <div class="detail-card">
+                <span>Wind Speed</span>
+                <strong id="windSpeed">-- km/h</strong>
+            </div>
+
+            <div class="detail-card">
+                <span>Precipitation</span>
+                <strong id="precipitation">-- mm</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Sunrise and Sunset -->
+        <section class="forecast-section">
+
+            <div class="forecast-heading">
+                <div>
+                    <p class="eyebrow">DAYLIGHT</p>
+                    <h3>Sunrise & Sunset</h3>
+                </div>
+            </div>
+
+            <div class="weather-details">
+
+                <div class="detail-card">
+                    <span>Sunrise</span>
+                    <strong id="sunrise">--:--</strong>
+                </div>
+
+                <div class="detail-card">
+                    <span>Sunset</span>
+                    <strong id="sunset">--:--</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Hourly Forecast -->
+        <section class="forecast-section">
+
+            <div class="forecast-heading">
+                <div>
+                    <p class="eyebrow">COMING UP</p>
+                    <h3>Hourly Forecast</h3>
+                </div>
+            </div>
+
+            <div id="hourlyForecast" class="forecast-grid">
+                <p>Loading hourly forecast...</p>
+            </div>
+
+        </section>
+
+
+        <!-- Seven Day Forecast -->
+        <section class="forecast-section">
+
+            <div class="forecast-heading">
+                <div>
+                    <p class="eyebrow">PLAN AHEAD</p>
+                    <h3>7-Day Forecast</h3>
+                </div>
+            </div>
+
+            <div id="weeklyForecast" class="weekly-forecast">
+                <p>Loading weekly forecast...</p>
+            </div>
+
+        </section>
+
+
+        <p class="weather-note" id="weatherTime"></p>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <a href="../index.html" class="logo">unlox<span>.</span></a>
+            <p>Your world, beyond the ordinary.</p>
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <h4>EXPLORE</h4>
+                <a href="../index.html">Home</a>
+                <a href="index.html">India Weather</a>
+                <a href="../movies/index.html">Movies</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Unlox. Built for everyday discovery.</p>
+        <p>WEATHER DATA: OPEN-METEO</p>
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
